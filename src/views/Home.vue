@@ -7,6 +7,7 @@ import Publications from '../components/home/Publications.vue';
 import Profile from '../components/home/Profile.vue';
 
 
+
 export default {
     name: 'Home',
     components: {
@@ -26,13 +27,11 @@ export default {
 <!-- <div class="lg:ml-20 lg:mr-4 mt-16 " id="home"> -->
 
 
-    <div class="lg:ml-20 lg:mr-4 mt-16"  id="home">
+    <div class="lg:ml-20 lg:mr-4 mt-5"  id="home">
 
-<AboutMe class="lg:ml-20 lg:mr-4 ml-5 lg:text-xl" />
-<Profile id="Profile" class="lg:min-h-screen  mt-5 lg:-ml-20 lg:-mr-0 "  />
-<Ventures  id="Ventures" class="lg:min-h-screen mt-5 lg:-ml-20  lg:-mr-0 "  />
-<Publications id="Publications" class="lg:min-h-screen mt-5 lg:-ml-20  lg:-mr-0"  />
-<Experience  id="Experiences" class=" mt-5  lg:-ml-20 lg:-mr-0"  />
+<AboutMe class="lg:ml-20 lg:mr-20 ml-5 mr-5 lg:text-xl" />
+<Publications id="Publications" class="mt-5 mr-5 ml-5  lg:-ml-20  lg:-mr-0"  />
+<Profile id="Profile" class="  mr-5 ml-5 mt-20 lg:-ml-20  lg:-mr-0 "  />
 
 
 

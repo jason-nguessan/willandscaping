@@ -128,7 +128,7 @@ data: () => ({
   slides: [
 
   {
-      title: 'Chief Organizer - Def Hacks',
+      title: 'location',
       href:"https://defhacks.co/hackathons/global_2.0.html",
       content: 'Hackathon Organizer, following 50k+ Prizes, 1k+ participants, as well as interesting speakers.',
       image:  defhacks
@@ -136,42 +136,14 @@ data: () => ({
     },
 
     {
-      title:  'Guest Speaker - V.City',
+      title:  '',
       href: "https://www.youtube.com/watch?v=FIyQiF5n7h0",
       content:  'Demystifying popular wide technical tool with tech influencer.',
       image: youtube
    
     },
  
-    //
-    {
-      title: '3rd Place Winner - Agri Case study',
-      href:"https://www.uoguelph.ca/lang/news/2020/03/students-collaborate-address-industry-challenges-agriculture",
-      content: 'Proposed using anaerobic digestion to create higher quality compost for mushroom facilities.',
-      image: thirdplaceuniversityuog
-    },
-
-    {
-      title: 'Youth Entrepreneur Mentor - Banks',
-      href:"https://sbs-spe.feddevontario.canada.ca/en/youth-entrepreneurship-guide",
-      content: 'Bank wide initiative crossing over 5 major banks to guide youths in their ventures.',
-      image: edcbdc
-    },
-
- 
-    {
-      title: '4th Place Winner - Hacking Health',
-      href: "https://hacking-health.org",
-      content: 'Solution that would fight against violence in health care centres.',
-      image: hackinghealth
-    },
-    {
-      title: 'Cloud Intro - University',
-      href:"https://www.uoguelph.ca",
-      content: 'Theoretical, and hands-on session of Cloud Computing.',
-      image: techinguoguelph
-    },
-  
+   
   
   ],
 
@@ -262,23 +234,25 @@ image: quote22
       
       <p class="font-general-semibold text-ternary-light dark:text-ternary-light sm:text-4xl md:text-2xl text-xl  sm:mx-8 mx-0 mt-8">
          {{ slides[currSlideIndex].title }}
+
+         
       
 </p>
 
 
-<span info.href  class="font-general-regular bg-center justify-center text-ternary-light text-center sm:text-3xl md:text-xl text-lg  leading-loose dark:text-ternary-light mx-8 my-auto cursor-pointer hover:text-indigo-300"  >
-                            <a :href=slides[currSlideIndex].href target="_blank" > {{ slides[currSlideIndex].content }}</a>
+
+
+<br>
+<span info.href  class="font-general-regular bg-center justify-center text-ternary-light text-center sm:text-3xl md:text-xl text-lg  leading-loose dark:text-ternary-light mx-8 my-auto "  >
+                            <p target="_blank" > {{ slides[currSlideIndex].content }}</p>
                         </span>
 
 
   
 
-<p class="font-general-regular bg-center justify-center text-ternary-light text-center text-2xl md:text-lg  leading-loose dark:text-ternary-light mx-8 my-auto">
-         {{ currSlideIndex + 1}} / {{ slides.length  }}
-       
 
-      
-</p>
+ 
+
       
       
 </div>
@@ -293,9 +267,18 @@ image: quote22
 
     
     </div>
-    <div class="hidden md:flex md:justify-center md:w-12/12 md:p-5 ">
+
+    
+    <div class="hidden md:flex md:justify-around md:w-12/12 md:p-5 md:pl-5 h-full ">
+
+<p class="font-general-regular  bg-center  text-ternary-light text-start text-2xl md:text-lg  leading-loose dark:text-ternary-light mx-8 mt-auto">
+         {{ currSlideIndex + 1}} / {{ slides.length  }} </p>
+
+
+       
      <!-- Control buttons -->
-     <button @click="updateSlides(true)" class="btn btn-prev mr-20" >
+    <div> 
+     <button @click="updateSlides(true)" class="btn btn-prev mr-20 mb-10" >
       
       <i
 						data-feather="arrow-left"
@@ -314,81 +297,16 @@ image: quote22
 
    
     </div>
-   
+   </div>
 
-    <div class="flex flex-col items-end py-5">
-    <hr class=" solid items-end solid  w-3/12 " > 
-</div>
+
 
 <!-- Hide only on small screens -->
-  <div class="hidden sm:inline" > 
 
-
-
-    <vueper-slides  :arrows="false" :fractions="true" progress :bulletsOutside="true" :touchable="false"  :slide-ratio=slideRatio 
-
-@ready="logEvents('ready', $event)"
- @previous="logEvents('previous', $event)"
- @next="logEvents('next', $event)"
- @before-slide="logEvents('before-slide', $event)"
- @slide="logEvents('slide', $event)"
-
->
-<vueper-slide v-for="(slide, i) in slidesVueper"
-   :key="i"
-   :image="slide.image"
-  
-
-
-   
-   >
- </vueper-slide>
- </vueper-slides>
-    </div>
 
 
 <!-- show only on small screens -->
 
-  <div class="sm:hidden" > 
-
-
-
-<vueper-slides  :arrows="false" :fractions="false" progress :bulletsOutside="true" fixed-height="200px" :touchable="false"  
-
-@ready="logEvents('ready', $event)"
-@previous="logEvents('previous', $event)"
-@next="logEvents('next', $event)"
-@before-slide="logEvents('before-slide', $event)"
-@slide="logEvents('slide', $event)"
-
->
- <vueper-slide v-for="(slide, i) in slidesVueper"
-:key="i"
-
-
-> 
-<template #content> 
-      <div class="vueperslide__content-wrapper"  style="flex-direction: row">
-    <div > 
-
-
-        <img 
-          :key="i"
-          :src=slide.image
-          alt=""
-          class="object-contain"
-        />
-      </div>
-
-      </div>
-
-
-
-</template>
-</vueper-slide>
-
-</vueper-slides>
-</div>
 
   </div>
 

@@ -25,6 +25,7 @@ export default {
 
 <template>
 
+
 <div class="flex ">
 <transition name="slide-fade" mode="out-in" appear  :style=animate >
 
