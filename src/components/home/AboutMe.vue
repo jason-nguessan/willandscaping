@@ -45,30 +45,24 @@ export default{
 
 </script>
 
-<template>
+<template> 
        		<MenuTopRightTitle  class="mt-0" title="My Intro"  /> 
 
-       <div class="flex"> 
 
 
-        <div class="flex flex-col  sm:w-8/12 w-full mx-0" >
+    
+        <div class="flex flex-col sm:flex-row sm:min-h-screen w-full sm:justify-between sm:items-center sm:-mt-32 " >
             <!-- Text Part  -->
-            <div class="flex sm:w-10/12 w-full justify-between">
+            <div class="flex sm:w-5/12 w-full justify-between">
 
               <Transition name="slide-fade" appear>
                 <div>
 
        
-                <TopPartLeft class="" left="Hi, my name is Hi, my name is " middle="Will" right="." /> 
+                <TopPartLeft class="" left="Hi, my name is Hi, my name is  my name is Hi, my name ismy name is Hi, my name ismy name is Hi, my name ismy name is Hi, my name ismy name is Hi, my name ismy name is Hi, my name ismy name is Hi, my name is" middle="Will" right="" /> 
          <br>
 
-                <TopPartLeft class="" left="Hi, my name is Hi, my name is Hi, my name is " middle="Will" right="." /> 
-         <br>
-                <TopPartLeft class="" left="Hi, my name is Hi, my name is Hi, my name is" middle="Will" right="." /> 
-         <br>
-                <TopPartLeft class="" left="Hi, my name is Hi, my name is Hi, my name is " middle="Will" right="." /> 
-         <br>
-         
+    
                 <TopPartLeft  left= "" middle="Landscaper" right="" /> 
                 <br>
 
@@ -99,6 +93,7 @@ export default{
           </div>
 
 
+              <Transition name="slide-fade" style="transition: all 7s ease-out ;"  appear>
 
  <div class=" sm:hidden flex flex-row  rounded-xl justify-around bg-white  lg:w-auto    "> 
           
@@ -113,9 +108,13 @@ export default{
 
 </div>
 </div>
-            </div>
-      
-  <div class="hidden sm:flex lg:flex-row flex-col   rounded-xl justify-around bg-white  lg:w-auto    "> 
+
+              </Transition>
+
+              <Transition name="slide-fade" style="transition: all 7s ease-out ;"  appear>
+
+  
+  <div class="hidden sm:flex lg:flex-row flex-col h-full   mr-52  rounded-xl justify-around bg-white  lg:w-auto   "> 
           
 <div class="flex flex-col justify-center items-center"> 
   
@@ -126,7 +125,6 @@ export default{
   <div class="lg:h-96 lg:w-80 h-72 w-60 bg-cover shadow-2xl z-40  rounded-xl m-10" style=" background-position-y: 35%;
     border-radius: 0%;" id="avatar1"></div>
 
-</div>
 </div>
 
 
@@ -140,7 +138,12 @@ export default{
               <!-- <AppHeaderLinks   :isOpen="false"  :showDash="true" />   -->
 
        </div>
+       </Transition>
+
+            </div>
       
+
+
               
 </template>
 
@@ -155,8 +158,10 @@ export default{
 
       background-size: cover;
 }
+
+
 .slide-fade-enter-active {
-  transition: all 0.10s ease-out ;
+  transition: all 2s ease-out ;
 }
 
 .slide-fade-leave-active {
@@ -168,5 +173,6 @@ export default{
   transform: translateX(50px);
   opacity: 0;
 }
+
 
 </style>

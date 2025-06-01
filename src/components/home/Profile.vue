@@ -24,14 +24,23 @@ export default {
   
   },
   mounted(){
-    
+        window.addEventListener('scroll', this.runOnScroll);
+
     window.setInterval(()=>{
       this.changeText()
     }, 5000);
 
   },
   methods:{
+runOnScroll() {
+      console.log('scroll2!');
 
+          window.removeEventListener('scroll', this.runOnScroll);
+
+
+          this.transition = true
+
+    },
 
     changeText(){
       const first = this.canDo.shift()
@@ -42,9 +51,11 @@ export default {
   },
     data: () => (
 
-
+  
       
         {
+
+          transition: false,
 
           leftPoint: {
               
@@ -104,7 +115,13 @@ export default {
 <div>
 
 
-		<MenuTopRightTitle  class="" title="Reviews & Summary"  /> 
+		<MenuTopRightTitle  class="" title="My Reviews & Summary"  /> 
+
+      <transition v-show="transition" name="slide-fade" mode="out-in" appear class="mt-5 t" >
+
+        <div> 
+
+
 
 <div class="lg:inner-spacing flex flex-col justify-around  "> 
 
@@ -139,7 +156,7 @@ export default {
 
 <div class="flex flex-row justify-center w-full"> 
 
-  <div class="hidden sm:flex lg:flex-row flex-col max-w-sm  rounded-xl justify-around bg-white  lg:w-auto    "> 
+  <div id="avatarbg" class="hidden sm:flex lg:flex-row flex-col max-w-sm  rounded-xl justify-around bg-white  lg:w-auto    "> 
           
 <div class="flex flex-col justify-center items-center"> 
   
@@ -191,8 +208,10 @@ export default {
 
   </div>
 </transition>
-</div>
+        </div>
+</transition>
 
+</div>
 
 
 

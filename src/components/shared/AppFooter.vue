@@ -16,11 +16,16 @@ export default {
 				document
 					.getElementsByTagName('html')[0]
 					.classList.remove('overflow-y-hidden');
+
+						document.getElementById("avatarbg").classList.remove("sm:hidden")
+
 				this.modal = false;
 			} else {
 				document
 					.getElementsByTagName('html')[0]
 					.classList.add('overflow-y-hidden');
+
+					document.getElementById("avatarbg").classList.add("sm:hidden")
 				this.modal = true;
 			}
 		},

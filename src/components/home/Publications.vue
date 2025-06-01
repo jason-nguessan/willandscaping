@@ -9,14 +9,22 @@ import quote22 from '@/assets/photos/quotes/quote22.png'
 import quote31 from '@/assets/photos/quotes/quote31.png'
 import quote11 from '@/assets/photos/quotes/quote11.png'
 
-import youtube from '@/assets/photos/work/youtube-vcity.jpg'
-import defhacks from '@/assets/photos/work/defhacks.png'
-import thirdplaceuniversityuog from '@/assets/photos/work/teaching-uoguelph.png'
+import p1 from '@/assets/photos/will/1.jpg'
+import p2 from '@/assets/photos/will/2.jpg'
+import p3 from '@/assets/photos/will/3.jpg'
+import p4 from '@/assets/photos/will/4.jpg'
+import p5 from '@/assets/photos/will/5.jpg'
+import p6 from '@/assets/photos/will/6.jpg'
+import p7 from '@/assets/photos/will/7.jpg'
+import p8 from '@/assets/photos/will/8.jpg'
 
 import edcbdc from '@/assets/photos/work/edc-bdc.jpeg'
 import hackinghealth from '@/assets/photos/work/hacking-health.jpeg'
 
 import techinguoguelph from '@/assets/photos/work/teaching-uoguelph.png'
+import { useElementVisibility } from '@vueuse/core'
+import { useTemplateRef } from 'vue'
+    const target = useTemplateRef<HTMLDivElement>('target')
 
 // src/assets/photos/work/youtube-vcity.jpg
 //       src/assets/photos/work/thirdplace-university-uog.png
@@ -24,6 +32,7 @@ import techinguoguelph from '@/assets/photos/work/teaching-uoguelph.png'
 //       src/assets/photos/work/hacking-health.jpeg
 //       src/assets/photos/work/teaching-uoguelph.png
 
+const targetIsVisible = useElementVisibility(target)
 
 export default{
     components: {
@@ -42,14 +51,30 @@ export default{
 	},
 
 
+
   mounted () {
+    window.addEventListener('scroll', this.runOnScroll);
+
+this.transition = targetIsVisible
+
+console.log(this.transition)
     this.transformSlide()
     feather.replace();
 
-  },
+  },  
 
   methods:{
+runOnScroll() {
+      console.log('scroll!');
 
+          window.removeEventListener('scroll', this.runOnScroll);
+
+
+          this.transition = true
+
+    },
+
+    
     updateSlides(isLeft){
 
       let maxSlide = this.slides.length - 1
@@ -122,26 +147,68 @@ export default{
   
 data: () => ({
 
-  
+  transition: false,
   
   currSlideIndex : 0,
   slides: [
 
   {
-      title: 'location',
-      href:"https://defhacks.co/hackathons/global_2.0.html",
-      content: 'Hackathon Organizer, following 50k+ Prizes, 1k+ participants, as well as interesting speakers.',
-      image:  defhacks
+      title: 's',
+      href:"ss",
+      content: 'insert content',
+      image:  p1
 
     },
+   {
+      title: 's',
+      href:"ss",
+      content: 'insert content',
+      image:  p2
 
-    {
-      title:  '',
-      href: "https://www.youtube.com/watch?v=FIyQiF5n7h0",
-      content:  'Demystifying popular wide technical tool with tech influencer.',
-      image: youtube
+    },
+   {
+      title: 's',
+      href:"ss",
+      content: 'insert content',
+      image:  p3
+
+    },
+   {
+      title: 's',
+      href:"ss",
+      content: 'des',
+      image:  p4
+
+    },
+   {
+      title: 's',
+      href:"ss",
+      content: 'des',
+      image:  p5
+
+    },
+   {
+      title: 's',
+      href:"ss",
+      content: 'des',
+      image:  p6
+
+    },
+   {
+      title: 's',
+      href:"ss",
+      content: 'des',
+      image:  p7
+
+    },
+   {
+      title: 's',
+      href:"ss",
+      content: 'des',
+      image:  p8
+
+    },
    
-    },
  
    
   
@@ -182,18 +249,22 @@ image: quote22
 
 
 <template>
-    
-    <div class="flex flex-col ">
-      <MenuTopRightTitle title="Publications"  /> 
-      
-      <div class="flex sm:flex-row mt-0 flex-col justify-center items-center">
 
-    
-    <div class="slider sm:w-1/2 w-full">
+    <div class="flex flex-col sm:min-h-screen "  >
+ 
+
+      <MenuTopRightTitle title="My Photos"  /> 
+
+      <div class="flex sm:flex-col mt-0 flex-col justify-center items-center  " ref="target">
+
+
+    <div class="slider  min-w-full sm:min-h-screen   h-96">
 
     
   
-      <div class="slide" v-for="slide,i in slides" :key="i">
+      <div class="slide sm:min-w-full  sm:min-h-screen h-96" v-for="slide,i in slides" :key="i">
+
+
         <img
           :src=slide.image
           alt=""
@@ -206,6 +277,9 @@ image: quote22
 
      
     </div> 
+
+
+
 
     <div class="flex flex-col items-center justify-between sm:w-1/2 w-full">
 
@@ -230,8 +304,12 @@ image: quote22
 
    
     </div>
-   
-      
+
+
+                                              <Transition name="slide-fade" v-if="transition"     appear >
+
+   <div> 
+
       <p class="font-general-semibold text-ternary-light dark:text-ternary-light sm:text-4xl md:text-2xl text-xl  sm:mx-8 mx-0 mt-8">
          {{ slides[currSlideIndex].title }}
 
@@ -239,17 +317,23 @@ image: quote22
       
 </p>
 
+      
+
+
 
 
 
 <br>
+
+
 <span info.href  class="font-general-regular bg-center justify-center text-ternary-light text-center sm:text-3xl md:text-xl text-lg  leading-loose dark:text-ternary-light mx-8 my-auto "  >
                             <p target="_blank" > {{ slides[currSlideIndex].content }}</p>
                         </span>
 
-
   
+   </div>
 
+               </Transition>
 
  
 
@@ -297,6 +381,7 @@ image: quote22
 
    
     </div>
+    
    </div>
 
 
@@ -309,21 +394,47 @@ image: quote22
 
 
   </div>
-
      <!-- V City (Explain ), Hacking Health,  Slide Bar (DSC), Hacking Agrifarm, Def Hacks (Def Hacks)  -->      <!-- Italic Text of what's been done -->
 
-
-
-              
+   
 </template>
 
 
 
 <style scoped>
 
+
+
+.slide-fade-enter-active {
+  transition: all 2s ease-out ;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(50px);
+  opacity: 0;
+}
+
+@media (min-width: 640px) {
+    .sm\:min-h-screen {
+        min-height: 70vh;
+    }
+}
+
+
+.sliderHeight {
+  
+  max-width: 800px;
+  overflow: hidden;
+  min-height: 80vh;
+}
+
 .slider {
   max-width: 800px;
-  height: 400px;
   position: relative;
   overflow: hidden;
 }
@@ -331,7 +442,6 @@ image: quote22
 .slide {
   width: 100%;
   max-width: 800px;
-  height: 400px;
   position: absolute;
   transition: all 0.5s;
 }

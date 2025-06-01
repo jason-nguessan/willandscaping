@@ -23,49 +23,35 @@ export default {
 	
 		<router-link
 			to="#"
-			aria-label="Profile"
-			v-scroll-to="'#Profile'"
+			aria-label="Intro"
+			v-scroll-to="'#Intro'"
 
 			>
-			<MenuTopRightTitle  :position="showDash == true ? 'end' : 'start' " :title="(showDash == true ? '-' : '') +  ' Profile'"   :showHr="false"  /> 
+			<MenuTopRightTitle  :position="showDash == true ? 'end' : 'start' " :title="(showDash == true ? '-' : '') +  ' My Intro'"   :showHr="false"  /> 
 			</router-link
 		>
 
 		<router-link
 			to="#"
-			aria-label="Ventures"
-			v-scroll-to="'#Ventures'"
+			aria-label="Photos"
+			v-scroll-to="'#Photos'"
 
 			>
-			<MenuTopRightTitle :position="showDash == true ? 'end' : 'start' "  :title="(showDash == true ? '-' : '') +  ' Ventures'"  :showHr="false"  /> 
+			<MenuTopRightTitle :position="showDash == true ? 'end' : 'start' "  :title="(showDash == true ? '-' : '') +  ' My Photos'"  :showHr="false"  /> 
 			</router-link
 		>
 
-		<router-link
 
-to="#"
-aria-label="Experiences"
-v-scroll-to="'#Experiences'"
->
-<MenuTopRightTitle :position="showDash == true ? 'end' : 'start' " :title="(showDash == true ? '-' : '') +  ' Experiences'"  :showHr="false"  /> 
-</router-link
->
 		<router-link
 			to="#"
-			aria-label="Publications"
-			v-scroll-to="'#Publications'"			>
-			<MenuTopRightTitle :position="showDash == true ? 'end' : 'start' " :title="(showDash == true ? '-' : '') +  ' Publications'"   :showHr="false"   /> 
+			aria-label="Reviews And SUMMARY"
+			v-scroll-to="'#ReviewsAndSummary'"			>
+			<MenuTopRightTitle :position="showDash == true ? 'end' : 'start' " :title="(showDash == true ? '-' : '') +  ' My Reviews and Summary'"   :showHr="false"   /> 
 			</router-link
 		>
 
 		
-		<router-link
-			to="#"
-			aria-label="Get in Touch"
-			v-scroll-to="'#GetInTouch'"			>
-			<MenuTopRightTitle :position="showDash == true ? 'end' : 'start' "  :title="(showDash == true ? '-' : '') +  ' Get In Touch'"    :showHr="false"   /> 
-			</router-link
-		>
+
 
 	
 	

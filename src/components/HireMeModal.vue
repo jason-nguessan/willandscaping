@@ -21,7 +21,7 @@ export default {
 
 <template>
 	<transition name="fade">
-		<div v-show="modal" class="font-general-regular fixed inset-0 z-30">
+		<div v-show="modal" class="font-general-regular fixed inset-0 z-30 ">
 			<!-- Modal body background as backdrop -->
 			<div
 				v-show="modal"
@@ -30,7 +30,7 @@ export default {
 			></div>
 			<!-- Modal content -->
 			<main
-				class="flex flex-col sm:items-center sm:justify-center sm:my-0 my-2 h-full w-full"
+				class="flex flex-col sm:items-center sm:justify-center sm:my-0 my-2 h-full w-full "
 			>
 				<transition name="fade-up-down">
 					<div
@@ -116,7 +116,8 @@ export default {
 
 <style scoped>
 .modal-body {
-	max-height: 570px;
+	max-height: 570px;	
+	max-width: fit;
 }
 .bg-gray-800-opacity {
 	background-color: #2d374850;

@@ -29,7 +29,7 @@ export default {
 <div class="flex ">
 <transition name="slide-fade" mode="out-in" appear  :style=animate >
 
-<p class="  sm:text-xl/10 text-ternary-light font-general  text-lg/10 mt-1"  :class="overrideClassLeft" style="" > {{ left }} </p>
+<p class="  sm:text-base/10 text-ternary-light font-general  text-lg/10 mt-1"  :class="overrideClassLeft" style="" > {{ left }} </p>
 <!-- transition: none -->
 
 </transition>

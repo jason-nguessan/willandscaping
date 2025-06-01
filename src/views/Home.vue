@@ -5,6 +5,8 @@ import Experience from '../components/home/Experience.vue';
 import Ventures from '../components/home/Ventures.vue';
 import Publications from '../components/home/Publications.vue';
 import Profile from '../components/home/Profile.vue';
+import { feather } from 'feather-icons';
+
 
 
 
@@ -27,11 +29,11 @@ export default {
 <!-- <div class="lg:ml-20 lg:mr-4 mt-16 " id="home"> -->
 
 
-    <div class="lg:ml-20 lg:mr-4 mt-5"  id="home">
+    <div class="lg:ml-20 lg:mr-4 mt-5 mx-5"   id="home">
 
-<AboutMe class="lg:ml-20 lg:mr-20 ml-5 mr-5 lg:text-xl" />
-<Publications id="Publications" class="mt-5 mr-5 ml-5  lg:-ml-20  lg:-mr-0"  />
-<Profile id="Profile" class="  mr-5 ml-5 mt-20 lg:-ml-20  lg:-mr-0 "  />
+<AboutMe id="Intro" class="lg:ml-20 lg:mr-25  sm:min-h-screen  ml-5 mr-5 lg:text-xl" />
+<Publications id="Photos" class="mt-5 mr-5 ml-5  sm:min-h-screen lg:-ml-20  lg:-mr-0"  />
+<Profile id="ReviewsAndSummary" class="  mr-5 ml-5 mt-20 lg:-ml-20  lg:-mr-0 "  />
 
 
 
