@@ -153,7 +153,7 @@ data: () => ({
   slides: [
 
   {
-      title: 's',
+      title: 'location',
       href:"ss",
       content: 'insert content',
       image:  p1
@@ -282,6 +282,9 @@ image: quote22
 
 
     <div class="flex flex-col items-center justify-between sm:w-1/2 w-full">
+      <br>
+            <br>
+      <br>
 
       <div class="md:hidden flex sm:justify-center  sm:w-12/12 sm:p-5 sm:mt-5 mb-5">
      <!-- Control buttons -->

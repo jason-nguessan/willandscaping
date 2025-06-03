@@ -78,12 +78,13 @@ export default {
 			>
 				<!-- Hire me button -->
 				<div id="GetInTouch" class="w-full px-5  ">
-					<Button
+			<a href="mailto:willymoye@yahoo.com"> 	<Button
 						title="Get in Touch"
 						class=" text-md font-general-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md w-full px-5 py-2.5 duration-300"
-						@click="showModal()"
+						
 						aria-label="Get in Touch"
-					/>
+					/> </a>
+				
 				</div>
 
 	
