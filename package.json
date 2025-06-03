@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@vueuse/core": "^13.3.0",
+    "aos": "^2.3.4",
     "feather-icons": "^4.29.0",
     "vue": "^3.3.4",
+    "vue-animate-onscroll": "^1.0.8",
     "vue-animated-counter": "^0.3.0",
     "vue-carousel": "^0.18.0",
     "vue-router": "^4.2.4",

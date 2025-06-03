@@ -7,9 +7,6 @@ import Publications from '../components/home/Publications.vue';
 import Profile from '../components/home/Profile.vue';
 import { feather } from 'feather-icons';
 
-
-
-
 export default {
     name: 'Home',
     components: {
@@ -21,7 +18,9 @@ export default {
 
         
     },
-  
+   mounted() {
+
+  },
 }
 </script>
 <template >
@@ -32,10 +31,19 @@ export default {
     <div class="lg:ml-20 lg:mr-4 mt-5 mx-5"   id="home">
 
 <AboutMe id="Intro" class="lg:ml-20 lg:mr-25  sm:min-h-screen  ml-5 mr-5 lg:text-xl" />
+
+<div class="displayBox" data-aos="zoom-in">
+
 <Publications id="Photos" class="mt-5 mr-5 ml-5  sm:min-h-screen lg:-ml-20  lg:-mr-0"  />
+
+</div>
+
+
+<div class="displayBox" data-aos="zoom-in">
+
 <Profile id="ReviewsAndSummary" class="  mr-5 ml-5 mt-20 lg:-ml-20  lg:-mr-0 "  />
 
-
+</div>
 
 
 
